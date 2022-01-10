@@ -1,0 +1,29 @@
+{% extends 'cut/base.html'%}
+
+{% load static %}
+
+{% block css %}
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>URL List</h1>
+                    {% if urls %}
+                    <ul>
+                        <li>
+                          <a href="{{ urls.user_url }}">{{ urls.short_url }}</a> {{urls.user_url}}
+                        </li>
+                    </ul>
+                    {% else %}
+                      <p>There are no urls.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
