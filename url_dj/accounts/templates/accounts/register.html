@@ -1,0 +1,51 @@
+{% extends 'cut/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block css %}
+{% load static %}
+    <link href="{% static 'css/auth.css' %}" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+<body class="bg-primary">
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        {% if form.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert"
+                             style="margin-top: 50px;">
+                            {{ form.errors }}
+                            You should check in on some of those fields below.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Create an account</h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="{% url 'accounts:register' %}" method="post">
+                                    {% csrf_token %}
+                                    {{ form|crispy }}
+                                    <div class="form-group mt-4 mb-0">
+                                        <input class="btn btn-primary btn-block" type="submit" value="Create an account">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="small"><a href="{% url 'accounts:login' %}">Already have one? Tap me!</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="{% static 'js/auth.js' %}"></script>
+
+{% endblock %}
