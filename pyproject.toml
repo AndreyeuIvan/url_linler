@@ -9,6 +9,8 @@ python = "^3.10"
 Django = "^4.0.1"
 psycopg2 = "^2.9.3"
 django-crispy-forms = "^1.13.0"
+black = "^21.12b0"
+Pillow = "^9.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

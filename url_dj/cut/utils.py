@@ -60,9 +60,7 @@ def true_chr(integer):
     elif 36 <= integer < 62:
         return chr(integer + LOWERCASE_OFFSET)
     else:
-        raise ValueError(
-            "%d is not a valid integer, base %d" % (integer, BASE)
-        )
+        raise ValueError("%d is not a valid integer, base %d" % (integer, BASE))
 
 
 def saturate(key):
