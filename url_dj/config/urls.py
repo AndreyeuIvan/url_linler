@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from cut.views import UrlCreateView, get_url
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("", UrlCreateView.as_view(), name="index"),
+    path("short_url/<int:id>", get_url, name="detail"),
 ]
