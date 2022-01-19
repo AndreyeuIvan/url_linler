@@ -8,7 +8,7 @@ from cut.models import Url
 class UrlsForm(forms.ModelForm):
 
     user_url = forms.CharField(
-        widget=forms.TextInput(attrs={"placeholder": "Enter Url"})
+        widget=forms.TextInput(attrs={"placeholder": "Enter Url; example https://www.qwe.com"})
     )
 
     class Meta:

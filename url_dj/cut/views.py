@@ -21,7 +21,10 @@ class UrlCreateView(CreateView):
 
     def post(self, request):
         form = UrlsForm(request.POST)
-        short_url = to_short_url(request.POST.get("user_url"))
+        try:
+            short_url = to_short_url(request.POST.get("user_url"))
+        except TypeError:
+            return HttpResponseRedirect(reverse_lazy("error"))
         if form.is_valid():
             url = form.save(commit=False)
             url.short_url = settings.HOST_URL + "/" + short_url
@@ -46,3 +49,7 @@ def get_url(request, id):
     """
     urls = Url.objects.get(id=id)
     return render(request, "cut/short_url.html", context={"urls": urls})
+
+
+def error_page(request):
+    return render(request, 'cut/error.html')

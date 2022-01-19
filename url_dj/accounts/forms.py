@@ -71,10 +71,10 @@ class UserProfileForm(UserChangeForm):
         attrs={"readonly": True})
     )
     first_name = forms.CharField(
-        widget=forms.TextInput(attrs={"placeholder": "Enter  name"})
+        widget=forms.TextInput(attrs={"readonly": True})
     )
     last_name = forms.CharField(
-        widget=forms.TextInput(attrs={"placeholder": "Enter last name"})
+        widget=forms.TextInput(attrs={"readonly": True})
     )
 
     class Meta:
