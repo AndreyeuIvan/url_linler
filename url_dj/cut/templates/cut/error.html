@@ -1,0 +1,24 @@
+{% extends 'cut/base.html'%}
+
+{% load static %}
+
+{% block css %}
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>You provided invalide url! Please push a button below</h1>
+                <a class="navbar-brand" href="{% url 'index' %}">Go Back</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            </div>
+        </div>
+    </div>
+</section>  
+    {% endblock %}

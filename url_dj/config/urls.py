@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 
-from cut.views import UrlCreateView, get_url, UrlListView
+from cut.views import UrlCreateView, get_url, UrlListView, error_page
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", login_required(UrlCreateView.as_view(), login_url=""), name="index"),
     path("short_url/<int:id>", get_url, name="detail"),
     path("list/", UrlListView.as_view(), name="list"),
+    path('error/', error_page, name='error'),
     path("accounts/", include("accounts.urls"), name="accounts"),
 ]
