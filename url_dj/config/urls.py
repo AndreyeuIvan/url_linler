@@ -24,6 +24,6 @@ urlpatterns = [
     path("", login_required(UrlCreateView.as_view(), login_url=""), name="index"),
     path("short_url/<int:id>", get_url, name="detail"),
     path("list/", UrlListView.as_view(), name="list"),
-    path('error/', error_page, name='error'),
+    path("error/", error_page, name="error"),
     path("accounts/", include("accounts.urls"), name="accounts"),
 ]
