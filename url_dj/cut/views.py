@@ -52,4 +52,4 @@ def get_url(request, id):
 
 
 def error_page(request):
-    return render(request, 'cut/error.html')
+    return render(request, "cut/error.html")

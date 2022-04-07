@@ -64,18 +64,10 @@ class UserRegistrationForm(UserCreationForm):
 
 
 class UserProfileForm(UserChangeForm):
-    username = forms.CharField(widget=forms.TextInput(
-        attrs={"readonly": True})
-    )
-    email = forms.CharField(widget=forms.EmailInput(
-        attrs={"readonly": True})
-    )
-    first_name = forms.CharField(
-        widget=forms.TextInput(attrs={"readonly": True})
-    )
-    last_name = forms.CharField(
-        widget=forms.TextInput(attrs={"readonly": True})
-    )
+    username = forms.CharField(widget=forms.TextInput(attrs={"readonly": True}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={"readonly": True}))
+    first_name = forms.CharField(widget=forms.TextInput(attrs={"readonly": True}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={"readonly": True}))
 
     class Meta:
         model = User
