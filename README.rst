@@ -1,12 +1,12 @@
-Тестовое задание на позицию Python Developer
+Task
 
-Python:
-1. Создать страницу с регистрации
-2. Создать страницу авторизации
-3. Создать старницу сокращения ссылок
-4. Создать отдельную страницу с историей сохраненных ссылок 
+Python: 
+1. Create a registration page 
+2. Create a login page 
+3. Create a link shortening page 
+4. Create a separate page with the history of saved links
 
-Test Sql
+Sql
 
 1 Task:
 SELECT * client_number, COUNT(CASE WHEN outcome='win' THEN 'win' END) AS WIN, COUNT(CASE WHEN outcome='lose' THEN 'lose' END) AS LOSE 
